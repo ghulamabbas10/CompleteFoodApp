@@ -1,43 +1,36 @@
-import { StyleSheet, Image, View, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 export default function TopBarScreen() {
-
   return (
     <View style={styles.container}>
-        
-        <View style={{backgroundColor:'red'}}>
-        <Text> Meals </Text>
-        </View>
-        
-        <View style={{backgroundColor:'green'}}>
-        <Text> Sides </Text>
-
-        </View>
-        <View style={{backgroundColor:'blue'}}>
-        <Text> Snacks </Text>
-
-        </View>
-
-
+      <TouchableOpacity style={styles.tab}>
+        <Text style={styles.tabText}>Meals</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.tab}>
+        <Text style={styles.tabText}>Sides</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.tab}>
+        <Text style={styles.tabText}>Snacks</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-container: {
-  flex: 0.05,
-  flexDirection:'row',
-//   alignItems: 'center',
-  justifyContent: 'space-between',
-},
-image:{
-  width:'100%', 
-  aspectRatio:2/1,
-},
-name:{
-fontSize:42
-},
-title:{
-  fontSize:50
-}
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#fff',
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  tab: {
+    paddingHorizontal: 20,
+  },
+  tabText: {
+    fontSize: 16,
+    color: '#000',
+    fontWeight: 'bold',
+  },
 });
